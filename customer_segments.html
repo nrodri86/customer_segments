@@ -19375,11 +19375,11 @@ Once you have performed this implementation, the dataset will be stored in the v
 <ul>
 <li>Should these data points be removed from the dataset? </li>
 </ul>
-<p>Depends on the domain of the problem. In a Customer Relation Management, the customer with high spending amounts should be consider on the analyses, specially, for creating customer segments. Actually in k means, these outliers can guide the centroids to a better direction.</p>
+<p>Yes, they should.</p>
 <ul>
 <li>If any data points were added to the outliers list to be removed, explain why.</li>
 </ul>
-<p>I did not removed any outliers.</p>
+<p>I added these five outliers because they do not represent the density of the data in more than one feature. These outliers can move the centroids in k-means since  the distance over  all the points are evaluated equally.</p>
 
 </div>
 </div>
@@ -19780,11 +19780,10 @@ CyZJkiRJ6rBgkiRJkqSO/wUmsGpjgOjg6AAAAABJRU5ErkJggg==
 <ul>
 <li>Using the visualization provided above, talk about each dimension and the cumulative variance explained by each, stressing upon which features are well represented by each dimension(both in terms of positive and negative variance explained). Discuss what the first four dimensions best represent in terms of customer spending.</li>
 </ul>
-<p>From the first dimension, you can see the correlation between the features Milk, Grocery and  Detergents_Paper. Here the dimension decrease negative of the negative-weighted features. The second dimension the correlation between the remaining features (Fresh, Frozen and Delicatessen). Again,  the dimension decrease negative of the negative-weighted features.</p>
-<p>The first dimension describes 45 % of the data and tell us how much a client will spend just in Fresh and Frozen but not in the other features. Actually it shows that Grocery, milk, and Detergents_paper are features that correlates each other.</p>
-<p>The second dimension is totally the opposite of  dimension 1. It increases when the features Fresh, Frozen and delicatessen decreases.</p>
-<p>the third dimension increases with increasing Frozen and Delicatessen and decreases with Fresh. It is a dimension that might help to diferentiate from the second one.</p>
-<p>The last one is a dimension that increases with increasing the values of Frozen.</p>
+<p>The first dimension describes 45 % of the data and tell us how much a client will spend just in Grocery, milk, and Detergents_paper. The dimension increases negatively when these features raises. Actually it shows that Grocery, Milk, and Detergents_paper are features that correlates each other. This dimension can describe how retail the client is, since, restaurants do not sell cleaning products, milk  or groceries masively.</p>
+<p>The second dimension is totally the opposite of  dimension 1. It increases negatively when the features Fresh, Frozen and Delicatessen raises. This dimension shows how likely the customer produces food.</p>
+<p>The third dimension is like a 'xor' operation between Fresh and Delicatesen. If Fresh spending is high and Delicatesen is low then shows a negative mangnitud. On the other hand, if Delicatesen is high and Fresh is low then dimension will show a positive magnitud. In addition, if Delicatessen and Fresh keeep their magnitudes high, the oposite weigths on these features will anule each other showing a low magnitud on this dimension.</p>
+<p>The fourth dimension is like a 'xor' operation between Frozen and Delicatesen. The dimension goes positevely when the client spends on Frozen  and goes negatively when the customer spends on Delicatessen. if both features are high or low, then the value of this dimension is low.</p>
 
 </div>
 </div>
